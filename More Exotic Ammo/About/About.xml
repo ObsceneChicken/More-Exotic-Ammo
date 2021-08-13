@@ -1,0 +1,32 @@
+<ModMetaData>
+	<name>More Exotic Ammo</name>
+	<author>Obscene Chicken</author>
+    <packageId>ObsceneChicken.MoreExoticAmmo</packageId>
+	<supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<description>Adds additional exotic ammo types for Combat Extended guns. Inspired by CE 40mm HEDP by Calvinhood.
+	
+	Currently includes:
+	- 12 Gauge -
+	Dragon's Breath: Low damage/penetration, but ignites the target.
+	Frag-12: High damage/low pen medium AoE. Danger close.
+	HEAT: High damage/pen small AoE.
+	Explosive Shot: Torgue makes things expload. End of sales pitch.
+	Sabot Slugs: Higher pen without blowing yourself up.
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>CETeam.CombatExtended</packageId>
+			<displayName>Combat Extended</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/1631756268</steamWorkshopUrl>
+			<downloadUrl>https://github.com/CombatExtended-Continued/CombatExtended</downloadUrl>
+		</li>
+	</modDependencies>
+
+	<loadAfter>
+		<li>CETeam.CombatExtended</li>
+		<li>CETeam.CombatExtendedGuns</li>
+		<!-- just in case -->
+	</loadAfter>
+</ModMetaData>

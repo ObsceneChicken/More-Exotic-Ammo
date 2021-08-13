@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>dragonbreath</defName>
+		<label>dragonbreath</label>
+		<labelShort>dragonbreath</labelShort>
+		<description>Burning magnesium shards that have low penetration, but set the target alight.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>FRAG</defName>
+		<label>FRAG</label>
+		<labelShort>FRAG</labelShort>
+		<description>A small fin stabilized high explosive fragmentation slug.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>HEAT</defName>
+		<label>HEAT</label>
+		<labelShort>HEAT</labelShort>
+		<description>A small fin stabilized high explosive antitank slug.</description>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>TorgueShot</defName>
+		<label>TorgueShot</label>
+		<labelShort>TorgueShot</labelShort>
+		<description>Did you know that 97% of living things on this planet aren't exploading right now?.</description>
+	</CombatExtended.AmmoCategoryDef>
+	
+	<CombatExtended.AmmoCategoryDef>
+		<defName>Sabot</defName>
+		<label>Sabot</label>
+		<description>A smaller denser projectile in a discarding sabot is even better at penetrating armor than a normal slug.</description>
+    </CombatExtended.AmmoCategoryDef>
+
+</Defs>

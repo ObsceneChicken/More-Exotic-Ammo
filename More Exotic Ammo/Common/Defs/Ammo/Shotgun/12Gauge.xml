@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingCategoryDef>
+		<defName>Ammo12Gauge</defName>
+		<label>12 gauge</label>
+		<parent>AmmoShotguns</parent>
+		<iconPath>UI/Icons/ThingCategories/CaliberShotgun</iconPath>
+	</ThingCategoryDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_dragonbreath</defName>
+		<label>12 gauge (dragonbreath)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/Dragonbreath</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>2.25</MarketValue>
+		</statBases>
+		<ammoClass>dragonbreath</ammoClass>
+		<cookOffProjectile>Bullet_12Gauge_dragonbreath</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_FRAG</defName>
+		<label>12 gauge (FRAG)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/Slug</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+			<MarketValue>2.75</MarketValue>
+		</statBases>
+		<ammoClass>FRAG</ammoClass>
+		<detonateProjectile>Bullet_12Gauge_FRAG</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_HEAT</defName>
+		<label>12 gauge (HEAT)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/Slug</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+			<MarketValue>2.75</MarketValue>
+		</statBases>
+		<ammoClass>HEAT</ammoClass>
+		<detonateProjectile>Bullet_12Gauge_HEAT</detonateProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_TorgueShot</defName>
+		<label>12 gauge (TorgueShot)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/TorgueShot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.05</Mass>
+			<MarketValue>2.75</MarketValue>
+		</statBases>
+		<ammoClass>TorgueShot</ammoClass>
+		<cookOffProjectile>Bullet_12Gauge_TorgueShot</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeBase">
+		<defName>Ammo_12Gauge_Sabot</defName>
+		<label>12 gauge shell (Sabot)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Shotgun/Slug</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.048</Mass>
+			<MarketValue>0.4</MarketValue>
+		</statBases>
+		<ammoClass>Slug</ammoClass>
+		<cookOffProjectile>Bullet_12Gauge_Slug</cookOffProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+	<ThingDef ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_dragonbreath</defName>
+		<label>Dragonbreath</label>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Special/Fire/FireA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>2</damageAmountBase>
+			<pelletCount>9</pelletCount>
+			<armorPenetrationSharp>2</armorPenetrationSharp>
+			<armorPenetrationBlunt>4.52</armorPenetrationBlunt>
+			<spreadMult>17.8</spreadMult>
+			<secondaryDamage>
+				<li>
+					<def>Flame</def>
+					<amount>6</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_FRAG</defName>
+		<label>FRAG</label>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>110</speed>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+			<armorPenetrationBlunt>85.2</armorPenetrationBlunt>
+		</projectile>
+		<comps>
+		<li Class="CombatExtended.CompProperties_ExplosiveCE">
+			<damageAmountBase>15</damageAmountBase>
+			<explosiveDamageType>Bomb</explosiveDamageType>
+			<explosiveRadius>.5</explosiveRadius>
+			<explosionSound>MortarBomb_Explode</explosionSound>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</li>
+		<li Class="CombatExtended.CompProperties_Fragments">
+			<fragments>
+				<Fragment_Small>5</Fragment_Small>
+			</fragments>
+      </li>
+    </comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_HEAT</defName>
+		<label>HEAT</label>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>110</speed>
+			<damageAmountBase>30</damageAmountBase>
+			<armorPenetrationSharp>20</armorPenetrationSharp>
+			<armorPenetrationBlunt>5</armorPenetrationBlunt>
+		</projectile>
+		<comps>
+		<li Class="CombatExtended.CompProperties_ExplosiveCE">
+			<damageAmountBase>15</damageAmountBase>
+			<explosiveDamageType>Bomb</explosiveDamageType>
+			<explosiveRadius>.25</explosiveRadius>
+			<explosionSound>MortarBomb_Explode</explosionSound>
+			<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+		</li>
+		<li Class="CombatExtended.CompProperties_Fragments">
+			<fragments>
+				<Fragment_Small>3</Fragment_Small>
+			</fragments>
+      </li>
+    </comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_TorgueShot</defName>
+		<label>TorgueShot</label>
+		<thingClass>CombatExtended.BulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Shotgun_Pellet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>8</damageAmountBase>
+			<pelletCount>9</pelletCount>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
+			<armorPenetrationBlunt>4.52</armorPenetrationBlunt>
+			<spreadMult>17.8</spreadMult>
+			<secondaryDamage>
+				<li>
+					<def>Bomb_Secondary</def>
+					<amount>8</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Base12GaugeBullet">
+		<defName>Bullet_12Gauge_Slug</defName>
+		<label>shotgun slug</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>110</speed>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationSharp>12</armorPenetrationSharp>
+			<armorPenetrationBlunt>85.2</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_12Gauge_dragonbreath</defName>
+		<label>make 12 gauge (dragonbreath) x200</label>
+		<description>Craft 200 12 gauge (dragonbreath) shells.</description>
+		<jobString>Making 12 gauge (dragonbreath) shells.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Prometheum</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Prometheum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_dragonbreath>200</Ammo_12Gauge_dragonbreath>
+		</products>
+		<workAmount>3800</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_12Gauge_FRAG</defName>
+		<label>make 12 gauge (FRAG) x200</label>
+		<description>Craft 200 12 gauge (FRAG) shells.</description>
+		<jobString>Making 12 gauge (FRAG) shells.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Prometheum</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_FRAG>200</Ammo_12Gauge_FRAG>
+		</products>
+		<workAmount>4200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_12Gauge_HEAT</defName>
+		<label>make 12 gauge (HEAT) x200</label>
+		<description>Craft 200 12 gauge (HEAT) shells.</description>
+		<jobString>Making 12 gauge (HEAT) shells.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Prometheum</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_HEAT>200</Ammo_12Gauge_HEAT>
+		</products>
+		<workAmount>4200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_12Gauge_TorgueShot</defName>
+		<label>make 12 gauge (TorgueShot) x200</label>
+		<description>Craft 200 12 gauge (TorgueShot) shells.</description>
+		<jobString>Making 12 gauge (TorgueShot) shells.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_TorgueShot>200</Ammo_12Gauge_TorgueShot>
+		</products>
+		<workAmount>3800</workAmount>
+	</RecipeDef>
+
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_12Gauge_Sabot</defName>
+    <label>make 12 gauge (Sabot) shell x200</label>
+    <description>Craft 200 12 gauge (Sabot) shells.</description>
+    <jobString>Making 12 gauge (Sabot) shells.</jobString>
+    <ingredients>
+		<li>
+			<filter>
+				<thingDefs>
+					<li>Steel</li>
+				</thingDefs>
+			</filter>
+			<count>50</count>
+		</li>
+    </ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_12Gauge_Sabot>200</Ammo_12Gauge_Sabot>
+		</products>
+		<workAmount>3000</workAmount>
+	</RecipeDef>
+
+</Defs>

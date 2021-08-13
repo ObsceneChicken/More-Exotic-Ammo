@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Combat Extended</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_12Gauge"]/ammoTypes</xpath>
+					<value>
+						<Ammo_12Gauge_dragonbreath>Bullet_12Gauge_dragonbreath</Ammo_12Gauge_dragonbreath>
+						<Ammo_12Gauge_FRAG>Bullet_12Gauge_FRAG</Ammo_12Gauge_FRAG>
+						<Ammo_12Gauge_HEAT>Bullet_12Gauge_HEAT</Ammo_12Gauge_HEAT>
+						<Ammo_12Gauge_TorgueShot>Bullet_12Gauge_HEAT</Ammo_12Gauge_TorgueShot>
+						<Ammo_12Gauge_Sabot>Bullet_12Gauge_HEAT</Ammo_12Gauge_Sabot>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
